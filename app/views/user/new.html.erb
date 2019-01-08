@@ -1,0 +1,16 @@
+<h1>User#new</h1>
+<p>Find me in app/views/user/new.html.erb</p>
+
+<%= form_for @user, url: {action: "create"}, html: {class: "signup_form"} do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :email %>
+  <%= f.submit "Sign up" %>
+<% end %>
+
+<p>Or log in with your user id:</p>
+
+<%= form_tag("/user/login", method: "post") do %>
+  <%= label_tag(:user_id, "User ID:") %>
+  <%= text_field_tag(:user_id) %>
+  <%= submit_tag("Log in") %>
+<% end %>

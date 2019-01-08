@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <span> Logged in with user id: <%= session[:logged_in_user_id] || "none" %></span>
     <%= yield %>
   </body>
 </html>
