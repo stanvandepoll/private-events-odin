@@ -1,7 +1,24 @@
 <h1>Events#index</h1>
 <p>Find me in app/views/events/index.html.erb</p>
+
+<h2>Upcoming events:</h2>
 <ol>
-<% @all_events.each do |event| %>
+<% Event.upcoming.each do |event| %>
+  <li>
+
+    <p>Date: <%= event.date %></p>
+    <p>Location: <%= event.location %></p>
+    <p>Creator: <%= event.creator.name %></p>
+    <p>Description: <%= event.description %></p>
+    <p>ID: <%= event.id %></p>
+    <br>
+  </li>
+<% end %>
+</ol>
+
+<h2>Past events:</h2>
+<ol>
+<% Event.past.each do |event| %>
   <li>
 
     <p>Date: <%= event.date %></p>
