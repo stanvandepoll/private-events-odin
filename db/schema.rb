@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_01_10_143203) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
+    t.index ["creator_id"], name: "index_events_on_creator_id"
   end
 
   create_table "invitations", force: :cascade do |t|

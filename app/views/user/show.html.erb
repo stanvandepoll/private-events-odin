@@ -4,6 +4,15 @@
 <h2>Profile of: <%= @user.name %> </h2>
 <p>Email: <%= @user.email %></p>
 
+<div id="upcoming_events">
+  <p>Upcoming events:</p>
+  <ol>
+      <% @upcoming_events.each do |event| %>
+        <li><p><%= event.description %>, creator: <%= event.creator.name%></p></li>
+        <% end %>
+  </ol>
+</div>
+
 <div id="events_list">
   <p>Created events:</p>
   <ol>
@@ -17,10 +26,19 @@
   <p>Events <%= @user.name %> has been invited to:</p>
   <ol>
     <% @user.invitations.each do |invite| %>
-    <li><p><%= invite.event.description %> 
+    <li><p><%= invite.event.description %>
       Date: <%= invite.event.date %>,
       Location: <%= invite.event.location%>
       Attending: <%= invite.attending%></p></li>
     <% end %>
+  </ol>
+</div>
+
+<div id="previous_events">
+  <p>Previous events:</p>
+  <ol>
+      <% @previous_events.each do |event| %>
+        <li><p><%= event.description %>, creator: <%= event.creator.name%></p></li>
+        <% end %>
   </ol>
 </div>

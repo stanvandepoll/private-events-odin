@@ -10,6 +10,8 @@ class UserController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:format])
+    @upcoming_events = @user.upcoming_events
+    @previous_events = @user.previous_events
   end
 
   def login
