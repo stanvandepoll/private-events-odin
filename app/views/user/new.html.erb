@@ -2,7 +2,9 @@
 <p>Find me in app/views/user/new.html.erb</p>
 
 <%= form_for @user, url: {action: "create"}, html: {class: "signup_form"} do |f| %>
+  <%= f.label :name %>
   <%= f.text_field :name %>
+  <%= f.label :email %>
   <%= f.text_field :email %>
   <%= f.submit "Sign up" %>
 <% end %>
