@@ -11,4 +11,16 @@
     <li><p><%= event.description %> Date: <%= event.date %>, Location: <%= event.location%>.</p></li>
     <% end %>
   </ol>
-<div>
+</div>
+
+<div id="attendence_list">
+  <p>Events <%= @user.name %> has been invited to:</p>
+  <ol>
+    <% @user.invitations.each do |invite| %>
+    <li><p><%= invite.event.description %> 
+      Date: <%= invite.event.date %>,
+      Location: <%= invite.event.location%>
+      Attending: <%= invite.attending%></p></li>
+    <% end %>
+  </ol>
+</div>

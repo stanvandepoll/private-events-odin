@@ -6,3 +6,15 @@
 <p>Description: <%= @event.description %></p>
 <p>Date: <%= @event.date %></p>
 <p>Location: <%= @event.location %></p>
+<p>Attendees: <% @event.invitations.each do |invite| %>
+  <%= invite.attendee.name %>
+  <%= if invite.attending == true
+        "is attending"
+      elsif invite.attending == false
+        "will not be attending"
+      else
+        "received the invitation but did not yet confirm attendance"
+      end %>
+  <%= "; "%>
+  <% end %>
+</p>
